@@ -241,10 +241,14 @@
     flex-direction:column;
     line-height:1.1;
   }
-  .brand-logo-full{
-    height:16px;
+  .brand-name-row{
+    display:flex;
+    align-items:center;
+    gap:6px;
+  }
+  .brand-icon-inline{
+    height:14px;
     width:auto;
-    margin-top:4px;
   }
   .brand span{
     font-family:var(--font-body);
@@ -996,7 +1000,7 @@
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="#home" class="brand">Landen Burmeister<img src="images/brokerage-wordmark.png" alt="Meraki Real Estate" class="brand-logo-full"></a>
+    <a href="#home" class="brand"><span class="brand-name-row">Landen Burmeister<img src="images/brokerage-icon.png" alt="" class="brand-icon-inline"></span><span>Meraki Real Estate</span></a>
 
     <input type="checkbox" id="nav-toggle">
     <ul class="nav-links">

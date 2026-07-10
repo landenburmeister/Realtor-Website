@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landen Burmeister | North Idaho Realtor</title>
+<meta name="description" content="Buyer and seller representation based in Spirit Lake, serving the entire North Idaho panhandle. No pressure, no upsell — just straight answers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F7F5F1;
+    --ink:#14130F;
+    --charcoal:#2B2A26;
+    --stone-100:#EDE9E1;
+    --stone-300:#D8D2C4;
+    --stone-500:#A8A08C;
+    --stone-700:#6B6456;
+    --rust:#75543A;
+    --rust-dark:#5A4029;
+    --moss:#55684A;
+    --sage:#96A87F;
+    --volt:#D6FF3D;
+
+    --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-6:24px;
+    --sp-8:32px; --sp-12:48px; --sp-16:64px; --sp-24:96px; --sp-32:128px;
+
+    --font-display:'Archivo Black', 'Archivo', sans-serif;
+    --font-head:'Archivo', sans-serif;
+    --font-body:'Inter', sans-serif;
+
+    --max-w:1280px;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  section[id]{ scroll-margin-top:84px; }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; }
+  ul{ list-style:none; margin:0; padding:0; }
+  button{ font-family:inherit; }
+
+  .wrap{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding-left:var(--sp-6);
+    padding-right:var(--sp-6);
+  }
+
+  /* ---------- Type ---------- */
+  h1,h2,h3{ margin:0; font-family:var(--font-head); font-weight:800; letter-spacing:-0.01em; }
+  .eyebrow{
+    font-family:var(--font-body);
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--rust);
+  }
+  .h1-display{
+    font-family:var(--font-display);
+    font-weight:900;
+    line-height:0.94;
+    letter-spacing:-0.02em;
+    font-size:clamp(2.65rem, 7.4vw, 5rem);
+  }
+  .hl-word{
+    position:relative;
+    display:inline-block;
+  }
+  .hl-swash{
+    position:absolute;
+    left:-3%;
+    bottom:-0.08em;
+    width:106%;
+    height:0.24em;
+    overflow:visible;
+    transform-origin:0% 50%;
+    transform:scaleX(0);
+    opacity:0;
+    animation:swash-draw 750ms cubic-bezier(.22,.85,.25,1) 550ms forwards;
+  }
+  .hl-swash path{
+    fill:none;
+    stroke:var(--rust);
+    stroke-width:6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  @keyframes swash-draw{
+    0%{ transform:scaleX(0); opacity:0; }
+    35%{ opacity:1; }
+    100%{ transform:scaleX(1); opacity:1; }
+  }
+  .h2-section{
+    font-size:clamp(1.7rem, 3.6vw, 2.5rem);
+    line-height:1.05;
+  }
+  .lede{
+    font-size:clamp(1rem, 1.6vw, 1.15rem);
+    line-height:1.55;
+    color:var(--charcoal);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    gap:var(--sp-2);
+    font-family:var(--font-body);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:2px;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+    white-space:nowrap;
+  }
+  .btn:active{ transform:translateY(1px); }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--paper);
+    border-color:var(--ink);
+  }
+  .btn-primary:hover{ background:var(--rust); border-color:var(--rust); }
+  .btn-outline{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--ink);
+  }
+  .btn-outline:hover{ background:var(--ink); color:var(--paper); }
+  .btn-outline.on-dark{ color:var(--paper); border-color:rgba(247,245,241,0.55); }
+  .btn-outline.on-dark:hover{ background:var(--paper); color:var(--ink); }
+  .btn-sm{ padding:11px 20px; font-size:12px; }
+
+  /* Sparkle: small glint that pops in on hover of any primary CTA */
+  .btn-sparkle{
+    position:absolute;
+    top:7px; right:11px;
+    width:6px; height:6px;
+    background:var(--volt);
+    clip-path:polygon(50% 0%,61% 35%,100% 50%,61% 65%,50% 100%,39% 65%,0% 50%,39% 35%);
+    opacity:0;
+    transform:scale(0) rotate(0deg);
+    transition:opacity .3s ease, transform .45s cubic-bezier(.34,1.56,.64,1);
+    pointer-events:none;
+  }
+  .btn-primary:hover .btn-sparkle{
+    opacity:1;
+    transform:scale(1) rotate(90deg);
+  }
+
+  /* Ambient pulse ring + shine sweep for the pinned nav CTA */
+  .btn-pulse::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:2px;
+    border:2px solid var(--rust);
+    opacity:0;
+    animation:pulse-ring 2.8s ease-out infinite;
+    pointer-events:none;
+  }
+  .btn-pulse::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:2px;
+    clip-path:inset(0 round 2px);
+    background:linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.55) 50%, transparent 60%);
+    transform:translateX(-120%);
+    animation:shine-sweep 3.8s ease-in-out infinite;
+    animation-delay:1s;
+    pointer-events:none;
+  }
+  @keyframes pulse-ring{
+    0%{ transform:scale(1); opacity:0.55; }
+    70%{ transform:scale(1.2); opacity:0; }
+    100%{ opacity:0; }
+  }
+  @keyframes shine-sweep{
+    0%, 25%{ transform:translateX(-120%); }
+    50%{ transform:translateX(120%); }
+    100%{ transform:translateX(120%); }
+  }
+
+  /* ---------- Scroll progress bar ---------- */
+  .scroll-progress{
+    position:fixed;
+    top:0; left:0; right:0;
+    height:3px;
+    z-index:200;
+    background:var(--rust);
+    transform-origin:0% 50%;
+    transform:scaleX(0);
+    pointer-events:none;
+  }
+
+  /* ---------- Nav ---------- */
+  .nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(247,245,241,0.78);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--stone-300);
+  }
+  .nav-inner{
+    max-width:var(--max-w);
+    margin:0 auto;
+    padding:14px var(--sp-6);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--sp-6);
+  }
+  .brand{
+    font-family:var(--font-head);
+    font-weight:800;
+    font-size:16px;
+    letter-spacing:0.02em;
+    text-decoration:none;
+    text-transform:uppercase;
+    display:flex;
+    flex-direction:column;
+    line-height:1.1;
+  }
+  .brand span{
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:10px;
+    letter-spacing:0.16em;
+    color:var(--rust);
+    text-transform:uppercase;
+    margin-top:2px;
+  }
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap:var(--sp-8);
+  }
+  .nav-links a{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:var(--ink);
+    position:relative;
+    padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:1px;
+    background:var(--rust);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .2s ease;
+  }
+  .nav-links a:hover{ color:var(--rust); }
+  .nav-links a:hover::after{ transform:scaleX(1); }
+
+  .nav-right{ display:flex; align-items:center; gap:var(--sp-6); }
+
+  .nav-toggle-label{
+    display:none;
+    width:22px; height:16px;
+    position:relative;
+    cursor:pointer;
+    flex-shrink:0;
+  }
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after{
+    content:"";
+    position:absolute;
+    left:0; right:0;
+    height:2px;
+    background:var(--ink);
+    transition:transform .2s ease, opacity .2s ease, top .2s ease;
+  }
+  .nav-toggle-label span{ top:7px; }
+  .nav-toggle-label span::before{ top:-7px; }
+  .nav-toggle-label span::after{ top:7px; }
+  #nav-toggle{ display:none; }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    overflow:hidden;
+    padding:var(--sp-24) 0 var(--sp-24);
+    isolation:isolate;
+  }
+  .hero-bg{
+    position:absolute;
+    inset:-15%;
+    z-index:-2;
+    background:
+      radial-gradient(ellipse 55% 45% at 12% 15%, rgba(224,171,99,0.4), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 90% 80%, rgba(85,104,74,0.28), transparent 58%),
+      linear-gradient(160deg, #F0EBDD 0%, #F7F5F1 45%, #ECE7D8 100%);
+    animation:bg-drift 26s ease-in-out infinite alternate;
+    will-change:transform;
+  }
+  @keyframes bg-drift{
+    0%{ transform:translate(0,0) scale(1); }
+    100%{ transform:translate(-1.5%,1%) scale(1.04); }
+  }
+
+  .hero-inner{ max-width:var(--max-w); margin:0 auto; padding:0 var(--sp-6); }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:var(--sp-16);
+    align-items:center;
+  }
+  .hero-copy .lede{ margin-top:var(--sp-6); max-width:52ch; }
+  .hero-ctas{
+    display:flex;
+    flex-wrap:wrap;
+    gap:var(--sp-4);
+    margin-top:var(--sp-8);
+  }
+  .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:var(--sp-6) var(--sp-8);
+    margin-top:var(--sp-12);
+    padding-top:var(--sp-6);
+    border-top:1px solid var(--stone-300);
+  }
+  .hero-meta-item{
+    display:flex;
+    align-items:flex-start;
+    gap:var(--sp-2);
+    font-size:13px;
+    color:var(--charcoal);
+  }
+  .hero-meta-item svg{ flex-shrink:0; margin-top:2px; color:var(--rust); }
+
+  .hero-media{
+    position:relative;
+  }
+  .hero-media-frame{
+    border-radius:12px;
+    overflow:hidden;
+    aspect-ratio:4 / 5;
+    position:relative;
+    background:linear-gradient(160deg, #C99A5B 0%, #8E7A52 45%, #556B4E 100%);
+    box-shadow:0 30px 60px -22px rgba(20,19,15,0.4);
+    will-change:transform;
+  }
+  .hero-media-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 72%;
+    display:block;
+    transform:scale(1.06);
+    animation:hero-drift 30s ease-in-out infinite alternate;
+    will-change:transform;
+  }
+  @keyframes hero-drift{
+    0%{ transform:scale(1.06); }
+    100%{ transform:scale(1.12); }
+  }
+  .hero-float-card{
+    position:absolute;
+    left:-20px;
+    bottom:-20px;
+    z-index:2;
+    background:var(--paper);
+    border-radius:6px;
+    box-shadow:0 20px 44px -14px rgba(20,19,15,0.4);
+    padding:14px 18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    max-width:210px;
+  }
+  .hero-float-card svg{ flex-shrink:0; color:var(--rust); }
+  .hero-float-card strong{
+    display:block;
+    font-family:var(--font-head);
+    font-weight:800;
+    font-size:14px;
+    letter-spacing:0.01em;
+  }
+  .hero-float-card span{
+    display:block;
+    font-size:12px;
+    color:var(--stone-700);
+    margin-top:2px;
+  }
+
+  /* ---------- Sections (generic) ---------- */
+  .section{ padding:var(--sp-24) 0; }
+  .section-alt{ background:var(--stone-100); }
+  .section-head{ max-width:640px; margin-bottom:var(--sp-16); }
+  .section-head .h2-section{ margin-top:var(--sp-3); }
+  .section-head .lede{ margin-top:var(--sp-4); }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.75fr 1.25fr;
+    gap:var(--sp-16);
+    align-items:center;
+  }
+  .about-photo img{
+    width:100%;
+    display:block;
+    border-radius:12px;
+    box-shadow:0 24px 50px -20px rgba(20,19,15,0.35);
+  }
+  .about-copy .h2-section{ margin-top:var(--sp-3); }
+  .about-copy .lede{ margin-top:var(--sp-4); max-width:56ch; }
+
+  /* ---------- Selling ---------- */
+  .seller-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:var(--sp-16);
+    align-items:center;
+  }
+  .eyebrow-moss{ color:var(--moss); }
+  .seller-head .h2-section{ margin-top:var(--sp-3); }
+  .seller-head .lede{ margin-top:var(--sp-4); max-width:44ch; }
+  .seller-cta{ margin-top:var(--sp-8); }
+  .seller-list{
+    display:flex;
+    flex-direction:column;
+    gap:var(--sp-6);
+  }
+  .seller-item{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+  }
+  .seller-icon{
+    flex-shrink:0;
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--paper);
+    border:1px solid var(--stone-300);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--moss);
+  }
+  .seller-item strong{
+    display:block;
+    font-family:var(--font-head);
+    font-weight:700;
+    font-size:16px;
+  }
+  .seller-item span{
+    display:block;
+    margin-top:4px;
+    color:var(--charcoal);
+    font-size:14.5px;
+    line-height:1.5;
+  }
+
+  /* ---------- Stats band ---------- */
+  .stats-band{
+    background:var(--ink);
+    padding:var(--sp-12) 0;
+  }
+  .stats-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:var(--sp-8);
+  }
+  .stat{
+    flex:1 1 200px;
+    text-align:center;
+    padding:0 var(--sp-4);
+    position:relative;
+  }
+  .stat:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    right:calc(var(--sp-4) * -1);
+    top:12%;
+    bottom:12%;
+    width:1px;
+    background:rgba(247,245,241,0.18);
+  }
+  .stat-num{
+    font-family:var(--font-display);
+    font-weight:900;
+    font-size:clamp(2.2rem, 5vw, 3.2rem);
+    line-height:1;
+    color:var(--paper);
+  }
+  .stat-num.stat-num-nudge{
+    position:relative;
+    top:-5px;
+  }
+  .stat-num .stat-star{
+    color:var(--sage);
+    font-size:0.65em;
+    vertical-align:middle;
+    margin-left:2px;
+  }
+  .stat-label{
+    margin-top:var(--sp-3);
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--stone-300);
+  }
+
+  /* ---------- How it works ---------- */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:var(--sp-8);
+  }
+  .step-card{
+    background:var(--paper);
+    border:1px solid var(--stone-300);
+    border-radius:4px;
+    padding:var(--sp-8) var(--sp-6);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .step-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px -20px rgba(20,19,15,0.2);
+  }
+  .step-num{
+    font-family:var(--font-display);
+    font-size:13px;
+    color:var(--rust);
+    letter-spacing:0.08em;
+  }
+  .step-icon{
+    width:44px; height:44px;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--stone-100);
+    border-radius:50%;
+    margin:var(--sp-4) 0 var(--sp-6);
+    color:var(--ink);
+    animation:icon-bob 3.2s ease-in-out infinite;
+  }
+  .step-card:nth-child(1) .step-icon{ animation-delay:0s; }
+  .step-card:nth-child(2) .step-icon{ animation-delay:.3s; }
+  .step-card:nth-child(3) .step-icon{ animation-delay:.6s; }
+  @keyframes icon-bob{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-5px); }
+  }
+  .step-card h3{ font-size:19px; font-weight:700; }
+  .step-card p{ margin-top:var(--sp-3); color:var(--charcoal); font-size:15px; }
+
+  /* ---------- Guarantee ---------- */
+  .guarantee-list{
+    margin-top:var(--sp-8);
+    display:flex;
+    flex-direction:column;
+    gap:var(--sp-5, 20px);
+    max-width:620px;
+  }
+  .guarantee-item{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    font-size:16px;
+    color:var(--charcoal);
+  }
+  .guarantee-check{
+    flex-shrink:0;
+    width:30px; height:30px;
+    border-radius:50%;
+    background:var(--moss);
+    color:var(--paper);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  html.js .guarantee-check{
+    transform:scale(0);
+    opacity:0;
+    transition:transform .5s cubic-bezier(.34,1.56,.64,1), opacity .35s ease;
+  }
+  html.js .guarantee-item.in-view .guarantee-check{ transform:scale(1); opacity:1; }
+  .guarantee-item:nth-child(1) .guarantee-check{ transition-delay:.05s; }
+  .guarantee-item:nth-child(2) .guarantee-check{ transition-delay:.2s; }
+  .guarantee-item:nth-child(3) .guarantee-check{ transition-delay:.35s; }
+
+  /* ---------- Offer band ---------- */
+  .offer-band{
+    background:var(--rust);
+    padding:var(--sp-12) 0;
+  }
+  .offer-inner{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--sp-8);
+  }
+  .offer-badge{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--sage);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:6px 12px;
+    border-radius:2px;
+    animation:breathe 3.4s ease-in-out infinite;
+  }
+  @keyframes breathe{
+    0%,100%{ transform:scale(1); }
+    50%{ transform:scale(1.06); }
+  }
+  .offer-headline{
+    font-family:var(--font-display);
+    font-weight:900;
+    font-size:clamp(1.6rem, 3.6vw, 2.6rem);
+    line-height:1.05;
+    color:var(--paper);
+    margin-top:var(--sp-3);
+  }
+  .offer-sub{
+    margin-top:var(--sp-3);
+    max-width:48ch;
+    color:rgba(247,245,241,0.85);
+    font-size:15px;
+  }
+  .offer-band .btn-primary{
+    background:var(--ink);
+    border-color:var(--ink);
+    flex-shrink:0;
+  }
+  .offer-band .btn-primary:hover{ background:var(--paper); color:var(--ink); border-color:var(--paper); }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{ max-width:760px; }
+  .faq-item{
+    border-bottom:1px solid var(--stone-300);
+    padding:var(--sp-4) 0;
+  }
+  .faq-item summary{
+    cursor:pointer;
+    list-style:none;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--sp-4);
+    font-family:var(--font-head);
+    font-weight:700;
+    font-size:16px;
+    padding:var(--sp-2) 0;
+  }
+  .faq-item summary::-webkit-details-marker{ display:none; }
+  .faq-icon{
+    flex-shrink:0;
+    color:var(--rust);
+    transition:transform .3s ease;
+  }
+  .faq-item[open] .faq-icon{ transform:rotate(45deg); }
+  .faq-item p{
+    margin-top:var(--sp-3);
+    max-width:64ch;
+    color:var(--charcoal);
+    font-size:15px;
+    line-height:1.6;
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testi-featured{
+    max-width:680px;
+    background:var(--paper);
+    border:1px solid var(--stone-300);
+    border-radius:6px;
+    padding:var(--sp-12) var(--sp-8);
+    box-shadow:0 24px 50px -24px rgba(20,19,15,0.25);
+  }
+  .testi-stars{
+    display:flex;
+    align-items:center;
+    gap:4px;
+    color:var(--rust);
+  }
+  .testi-stars span{
+    margin-left:8px;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--stone-700);
+  }
+  .testi-quote-mark{ color:var(--stone-300); margin-top:var(--sp-4); }
+  .testi-quote-lg{
+    margin-top:var(--sp-3);
+    font-size:clamp(1.05rem, 2vw, 1.3rem);
+    line-height:1.5;
+    color:var(--ink);
+  }
+  .testi-attr{
+    margin-top:var(--sp-6);
+    padding-top:var(--sp-4);
+    border-top:1px solid var(--stone-300);
+    font-size:13px;
+  }
+  .testi-attr strong{ display:block; font-weight:700; }
+  .testi-attr span{ color:var(--stone-700); }
+  .testi-google-btn{ margin-top:var(--sp-8); }
+
+  /* ---------- Contact ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1.2fr 0.8fr;
+    gap:var(--sp-16);
+  }
+  .field{ margin-bottom:var(--sp-6); }
+  .field label{
+    display:block;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--stone-700);
+    margin-bottom:8px;
+  }
+  .field-radio-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:var(--sp-6);
+  }
+  .field-radio{
+    display:flex !important;
+    align-items:center;
+    gap:8px;
+    font-size:15px !important;
+    font-weight:400 !important;
+    letter-spacing:normal !important;
+    text-transform:none !important;
+    color:var(--ink) !important;
+    margin-bottom:0 !important;
+    cursor:pointer;
+  }
+  .field-radio input{
+    flex-shrink:0;
+    width:16px !important;
+    height:16px !important;
+    margin:0;
+    accent-color:var(--rust);
+    cursor:pointer;
+  }
+  .field-radio span{ white-space:nowrap; }
+  .field input,
+  .field textarea{
+    width:100%;
+    border:none;
+    border-bottom:1.5px solid var(--stone-300);
+    background:transparent;
+    padding:10px 2px;
+    font-family:var(--font-body);
+    font-size:15px;
+    color:var(--ink);
+    outline:none;
+    transition:border-color .2s ease;
+  }
+  .field input:focus,
+  .field textarea:focus{ border-color:var(--ink); }
+  .field textarea{ resize:vertical; min-height:100px; }
+  .contact-side{
+    background:var(--ink);
+    color:var(--paper);
+    border-radius:4px;
+    padding:var(--sp-8) var(--sp-6);
+    height:fit-content;
+  }
+  .contact-side h3{ font-size:18px; font-weight:700; }
+  .contact-list{ margin-top:var(--sp-6); display:flex; flex-direction:column; gap:var(--sp-6); }
+  .contact-list li{ display:flex; gap:12px; align-items:flex-start; font-size:14px; }
+  .contact-list svg{ color:var(--sage); flex-shrink:0; margin-top:2px; }
+  .contact-list a{ text-decoration:none; }
+  .contact-list a:hover{ text-decoration:underline; }
+  .contact-side .service-area{
+    margin-top:var(--sp-8);
+    padding-top:var(--sp-6);
+    border-top:1px solid rgba(247,245,241,0.2);
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--stone-300);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--charcoal);
+    color:var(--stone-300);
+    padding:var(--sp-12) 0;
+  }
+  .footer-inner{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:var(--sp-4);
+    font-size:13px;
+  }
+  .footer-inner .brand{ color:var(--paper); }
+  .footer-inner .brand span{ color:var(--sage); }
+  .footer-legal-group{
+    display:flex;
+    align-items:center;
+    gap:var(--sp-6);
+    flex-wrap:wrap;
+  }
+  .brokerage-logo{
+    height:56px;
+    width:auto;
+    flex-shrink:0;
+  }
+  .footer-legal{ color:var(--stone-500); max-width:480px; line-height:1.5; }
+
+  /* ---------- Sticky book-now bar ---------- */
+  body{ padding-bottom:78px; }
+  .sticky-bar{
+    position:fixed;
+    left:0; right:0; bottom:0;
+    z-index:90;
+    background:var(--ink);
+    color:var(--paper);
+    border-top:1px solid rgba(247,245,241,0.15);
+    box-shadow:0 -10px 30px -16px rgba(20,19,15,0.4);
+  }
+  .sticky-bar-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:var(--sp-6);
+    padding:14px var(--sp-6);
+  }
+  .sticky-bar-text{ font-size:14px; }
+  .sticky-bar-text strong{ color:var(--sage); }
+
+  /* ---------- Slide-in nudge ---------- */
+  .nudge{
+    display:none;
+    position:fixed;
+    right:var(--sp-6);
+    bottom:94px;
+    z-index:95;
+    background:var(--paper);
+    border:1px solid var(--stone-300);
+    border-radius:6px;
+    box-shadow:0 24px 54px -18px rgba(20,19,15,0.4);
+    padding:var(--sp-6);
+    max-width:270px;
+  }
+  html.js .nudge{
+    display:block;
+    transform:translateX(130%);
+    opacity:0;
+    transition:transform .5s cubic-bezier(.22,.85,.25,1), opacity .4s ease;
+  }
+  html.js .nudge.show{ transform:translateX(0); opacity:1; }
+  .nudge-close{
+    position:absolute;
+    top:8px; right:8px;
+    background:none;
+    border:none;
+    padding:4px;
+    cursor:pointer;
+    color:var(--stone-700);
+    line-height:0;
+  }
+  .nudge-close:hover{ color:var(--ink); }
+  .nudge-title{ font-family:var(--font-head); font-weight:800; font-size:16px; }
+  .nudge-text{ margin-top:6px; font-size:14px; color:var(--charcoal); }
+  .nudge-text strong{ color:var(--rust); }
+  .nudge .btn{ margin-top:var(--sp-4); width:100%; justify-content:center; }
+
+  /* ---------- Reveal-on-scroll (progressive enhancement) ---------- */
+  html.js .reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  html.js .reveal.in-view{ opacity:1; transform:none; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .hero-bg{ animation:none !important; }
+    .hero-media-frame img{ animation:none !important; transform:scale(1.06); }
+    .hl-swash{ animation:none !important; transform:scaleX(1); opacity:1; }
+    .step-icon{ animation:none !important; }
+    .offer-badge{ animation:none !important; }
+    .btn-pulse::before, .btn-pulse::after{ animation:none !important; content:none; }
+    html.js .reveal{ opacity:1; transform:none; transition:none; }
+    html.js .guarantee-check{ transform:scale(1); opacity:1; transition:none; }
+    html.js .nudge{ transition:none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px){
+    .steps{ grid-template-columns:1fr; }
+    .contact-grid{ grid-template-columns:1fr; gap:var(--sp-12); }
+    .hero-grid{ grid-template-columns:1fr; gap:var(--sp-12); }
+    .hero-media{ order:-1; max-width:420px; margin:0 auto; }
+    .hero-float-card{ left:-12px; bottom:-16px; }
+    .seller-grid{ grid-template-columns:1fr; gap:var(--sp-12); }
+    .about-grid{ grid-template-columns:1fr; gap:var(--sp-8); }
+    .about-photo img{ max-width:280px; margin:0 auto; }
+  }
+
+  @media (max-width: 640px){
+    .stats-row{ flex-direction:column; }
+    .stat:not(:last-child)::after{ display:none; }
+    .stat:not(:last-child){
+      padding-bottom:var(--sp-8);
+      border-bottom:1px solid rgba(247,245,241,0.18);
+    }
+  }
+
+  @media (max-width: 760px){
+    .nav-toggle-label{ display:block; }
+    .nav-links{
+      position:absolute;
+      top:100%;
+      left:0; right:0;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0;
+      background:var(--paper);
+      border-bottom:1px solid var(--stone-300);
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .3s ease;
+    }
+    .nav-links a{
+      width:100%;
+      padding:16px var(--sp-6);
+      border-bottom:1px solid var(--stone-300);
+    }
+    #nav-toggle:checked ~ .nav-links{ max-height:280px; }
+    #nav-toggle:checked ~ .nav-toggle-label span{ background:transparent; }
+    #nav-toggle:checked ~ .nav-toggle-label span::before{ top:0; transform:rotate(45deg); }
+    #nav-toggle:checked ~ .nav-toggle-label span::after{ top:0; transform:rotate(-45deg); }
+    .nav-right .btn-sm span.btn-label-full{ display:none; }
+    .hero{ padding:var(--sp-16) 0; }
+    .section{ padding:var(--sp-16) 0; }
+    .contact-grid{ gap:var(--sp-8); }
+    .offer-inner{ flex-direction:column; align-items:flex-start; }
+    .offer-band .btn-primary{ width:100%; justify-content:center; }
+    .sticky-bar-inner{ flex-direction:column; align-items:flex-start; gap:var(--sp-2); padding:12px var(--sp-6); }
+    .sticky-bar-inner .btn{ width:100%; justify-content:center; }
+    body{ padding-bottom:104px; }
+    .nudge{ right:var(--sp-4); left:var(--sp-4); max-width:none; bottom:150px; }
+  }
+
+  @media (max-width: 480px){
+    .hero-meta{ gap:var(--sp-4); }
+  }
+</style>
+</head>
+<body>
+
+<script>document.documentElement.classList.add('js');</script>
+
+<div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="brand">Landen Burmeister<span>North Idaho Realtor</span></a>
+
+    <input type="checkbox" id="nav-toggle">
+    <ul class="nav-links">
+      <li><a href="#selling">Selling</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-primary btn-sm btn-pulse">Book Now<span class="btn-sparkle" aria-hidden="true"></span></a>
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle menu"><span></span></label>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="home" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <div class="hero-inner">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">North Idaho</p>
+          <h1 class="h1-display">Let's find your <span class="hl-word">home<svg class="hl-swash" viewBox="0 0 220 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4,10 C20,2 34,16 50,9 C66,3 80,15 96,8 C112,2 126,14 142,9 C158,4 172,15 188,8 C198,5 205,9 214,6"/></svg></span> in North Idaho.</h1>
+          <p class="lede">Whether you're buying your first home or selling one you've outgrown, I'll help you get the results you're looking for — around Spirit Lake and the whole North Idaho panhandle.</p>
+          <div class="hero-ctas">
+            <a href="#contact" class="btn btn-primary">Book Now<span class="btn-sparkle" aria-hidden="true"></span></a>
+            <a href="#how-it-works" class="btn btn-outline">See How It Works</a>
+          </div>
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Based in Spirit Lake, serving the entire North Idaho panhandle</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-media">
+          <div class="hero-media-frame">
+            <img src="images/hero.jpg" alt="Lake, pine forest, and mountains in North Idaho" width="2400" height="3600" onerror="this.style.display='none'">
+          </div>
+          <div class="hero-float-card">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            <div>
+              <strong>This Week</strong>
+              <span>3 showing slots open</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-photo reveal">
+          <img src="images/headshot.jpg" alt="Landen Burmeister at Spirit Lake, North Idaho">
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">About Me</p>
+          <h2 class="h2-section">Born and raised in North Idaho</h2>
+          <p class="lede">I grew up in Coeur d'Alene and I've always loved the outdoors — the lake, the trails, all of it. My family also runs a small motel in Spirit Lake, so I know this area inside and out, not just the listings. I got into real estate to help people find the house they actually need, not the one that pads someone else's commission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="selling" class="section section-alt">
+    <div class="wrap">
+      <div class="seller-grid">
+        <div class="seller-head section-head reveal">
+          <p class="eyebrow eyebrow-moss">Selling In North Idaho</p>
+          <h2 class="h2-section">Thinking about selling? Let's get it priced right — and sold.</h2>
+          <p class="lede">I've had multiple listings go under contract in under 7 days, priced to move, not sit. Here's what you get when I list yours.</p>
+          <a href="#contact" class="btn btn-primary seller-cta">Get My Free Home Value &amp; Photos<span class="btn-sparkle" aria-hidden="true"></span></a>
+        </div>
+
+        <div class="seller-list">
+          <div class="seller-item reveal">
+            <span class="seller-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+            <div>
+              <strong>Free professional listing photos</strong>
+              <span>The same photo and video work I use for my own business — no extra cost to you.</span>
+            </div>
+          </div>
+          <div class="seller-item reveal">
+            <span class="seller-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg></span>
+            <div>
+              <strong>Pricing based on real comps</strong>
+              <span>Not wishful thinking. We price it to actually sell, not sit on the market.</span>
+            </div>
+          </div>
+          <div class="seller-item reveal">
+            <span class="seller-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+            <div>
+              <strong>Direct access to me</strong>
+              <span>No hand-offs to a team or assistant — you work with me start to finish.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-band" aria-label="What you can count on">
+    <div class="wrap stats-row">
+      <div class="stat">
+        <p class="stat-num"><span class="count-num" data-count-to="24">24</span> HRS</p>
+        <p class="stat-label">Max Response Time, Every Inquiry</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num stat-num-nudge">1:1</p>
+        <p class="stat-label">You Work With Me, Not A Team</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">Licensed</p>
+        <p class="stat-label">Idaho Real Estate Professional</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The Process</p>
+        <h2 class="h2-section">Three steps, no guesswork</h2>
+        <p class="lede">Buying a house is stressful enough without wondering what happens next. Here's exactly how it goes.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step-card reveal">
+          <p class="step-num">01</p>
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <h3>Free 15-minute call</h3>
+          <p>We talk budget, must-haves, and deal-breakers — no pressure, no pitch. If it's not a fit, I'll tell you straight.</p>
+        </div>
+
+        <div class="step-card reveal">
+          <p class="step-num">02</p>
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <h3>Guided search</h3>
+          <p>I send listings that actually match what you told me — not everything on the market. You see homes worth your time.</p>
+        </div>
+
+        <div class="step-card reveal">
+          <p class="step-num">03</p>
+          <div class="step-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>
+          </div>
+          <h3>Close with confidence</h3>
+          <p>I handle the offer, the negotiation, and the paperwork. You show up to closing and get your keys.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guarantee" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">The No-Pressure Guarantee</p>
+        <h2 class="h2-section">If it's not right, we don't force it</h2>
+        <p class="lede">Real estate anxiety usually comes down to trust, not information. Here's what I promise going in.</p>
+      </div>
+      <div class="guarantee-list">
+        <div class="guarantee-item reveal">
+          <span class="guarantee-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <span>You'll never be pushed toward more house than you can afford</span>
+        </div>
+        <div class="guarantee-item reveal">
+          <span class="guarantee-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <span>Every cost is explained before you sign anything</span>
+        </div>
+        <div class="guarantee-item reveal">
+          <span class="guarantee-check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>
+          <span>No pressure to sign a representation agreement until you're sure I'm the right fit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="offer-band reveal" aria-label="Limited availability">
+    <div class="wrap offer-inner">
+      <div>
+        <span class="offer-badge">Limited Spots</span>
+        <h2 class="offer-headline">I only take on a few buyers at a time</h2>
+        <p class="offer-sub">So everyone gets real attention, not a queue. Reach out this week and I'll get you on the calendar before spots fill up.</p>
+      </div>
+      <a href="#contact" class="btn btn-primary">Book Your Free Call<span class="btn-sparkle" aria-hidden="true"></span></a>
+    </div>
+  </section>
+
+  <div id="nudge-trigger" aria-hidden="true"></div>
+
+  <section id="testimonials" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">From Recent Clients</p>
+        <h2 class="h2-section">What it's actually like to work with me</h2>
+      </div>
+
+      <div class="testi-featured reveal">
+        <div class="testi-stars" aria-label="5 out of 5 stars">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+          <span>Google Review</span>
+        </div>
+        <svg width="34" height="26" viewBox="0 0 24 24" fill="currentColor" class="testi-quote-mark"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+        <p class="testi-quote-lg">"Awesome real estate agent! Very thorough, attentive, and incredibly knowledgeable and helpful. Goes the extra mile for every single client. Would highly recommend working with him for any buyer or seller needs. This guy is 10/10."</p>
+        <div class="testi-attr">
+          <strong>Shannon</strong>
+          <span>Google Review</span>
+        </div>
+        <a href="https://share.google/rnIjObUQBBaKSwOpu" target="_blank" rel="noopener noreferrer" class="btn btn-outline testi-google-btn">Read More Reviews On Google</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Common Questions</p>
+        <h2 class="h2-section">Questions worth asking upfront</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>Does it cost anything to work with you?<svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>How I'm paid is negotiated and agreed upfront — we talk it through before you sign anything, so there's no surprise bill waiting at closing.</p>
+        </details>
+        <details class="faq-item">
+          <summary>I'm not ready to buy yet — can I still reach out?<svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>Yes. Most of my clients start out just looking. There's no pressure to move faster than you're actually ready to.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if I already found a house online?<svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>Happy to help either way — send me the listing and I'll walk it with you, or help you put together an offer on it directly.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What areas do you cover?<svg class="faq-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></summary>
+          <p>Spirit Lake and the entire North Idaho panhandle — Coeur d'Alene, Hayden, Post Falls, Rathdrum, and everywhere in between.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Get In Touch</p>
+        <h2 class="h2-section">Let's talk</h2>
+        <p class="lede">Buying, selling, or just weighing your options — tell me where you're at. I'll get back to you within one business day, usually sooner.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="reveal" action="#" method="post">
+          <div class="field">
+            <label>I'm looking to</label>
+            <div class="field-radio-group">
+              <label class="field-radio"><input type="radio" name="intent" value="buy" checked><span>Buy</span></label>
+              <label class="field-radio"><input type="radio" name="intent" value="sell"><span>Sell</span></label>
+              <label class="field-radio"><input type="radio" name="intent" value="both"><span>Both</span></label>
+            </div>
+          </div>
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="message">Tell me about your situation</label>
+            <textarea id="message" name="message" placeholder="Town, budget or price range, timeline — whatever you've got so far." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send It Over<span class="btn-sparkle" aria-hidden="true"></span></button>
+        </form>
+
+        <aside class="contact-side reveal">
+          <h3>Talk to Landen directly</h3>
+          <ul class="contact-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <a href="tel:12089662359">(208) 966-2359</a>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
+              <a href="mailto:landenburmeister@icloud.com">landenburmeister@icloud.com</a>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Spirit Lake, ID — serving the whole North Idaho panhandle</span>
+            </li>
+          </ul>
+          <p class="service-area">Usually booked out 2–3 days for in-person showings</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a href="#home" class="brand">Landen Burmeister<span>North Idaho Realtor</span></a>
+    <div class="footer-legal-group">
+      <img src="images/brokerage-logo.png" alt="Meraki Real Estate" class="brokerage-logo">
+      <p class="footer-legal">Licensed real estate professional, State of Idaho, brokered by Meraki Real Estate. Equal Housing Opportunity. © 2026 Landen Burmeister. All information deemed reliable but not guaranteed.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-bar" role="complementary" aria-label="Booking reminder">
+  <div class="wrap sticky-bar-inner">
+    <p class="sticky-bar-text"><strong>Only 3 showing slots left this week</strong> — free 15-min call, no pressure.</p>
+    <a href="#contact" class="btn btn-primary btn-sm">Book Now<span class="btn-sparkle" aria-hidden="true"></span></a>
+  </div>
+</div>
+
+<div class="nudge" id="nudge" role="dialog" aria-label="Special offer reminder">
+  <button class="nudge-close" id="nudge-close" aria-label="Dismiss">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+  </button>
+  <p class="nudge-title">Still deciding?</p>
+  <p class="nudge-text">I only take on <strong>a few buyers at a time</strong> — reach out this week to lock in a spot.</p>
+  <a href="#contact" class="btn btn-primary btn-sm">Book Now<span class="btn-sparkle" aria-hidden="true"></span></a>
+</div>
+
+<script>
+(function(){
+  if(!('IntersectionObserver' in window)) return;
+  var items = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+  items.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var nums = document.querySelectorAll('.count-num');
+  if(!nums.length || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      io.unobserve(entry.target);
+      var el = entry.target;
+      var target = parseFloat(el.getAttribute('data-count-to'));
+      var decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      if(reduceMotion){
+        el.textContent = decimals ? target.toFixed(decimals) : target;
+        return;
+      }
+      var duration = 1100;
+      var start = null;
+      function step(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var val = target * eased;
+        el.textContent = decimals ? val.toFixed(decimals) : Math.round(val);
+        if(progress < 1) requestAnimationFrame(step);
+        else el.textContent = decimals ? target.toFixed(decimals) : target;
+      }
+      requestAnimationFrame(step);
+    });
+  }, { threshold: 0.6 });
+  nums.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var bar = document.getElementById('scroll-progress');
+  if(!bar) return;
+  var ticking = false;
+  function update(){
+    var h = document.documentElement;
+    var scrollTop = h.scrollTop || document.body.scrollTop;
+    var max = h.scrollHeight - h.clientHeight;
+    var pct = max > 0 ? Math.min(scrollTop / max, 1) : 0;
+    bar.style.transform = 'scaleX(' + pct + ')';
+    ticking = false;
+  }
+  document.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, { passive:true });
+  update();
+})();
+
+(function(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var frame = document.querySelector('.hero-media-frame');
+  var hero = document.querySelector('.hero');
+  if(!frame || !hero) return;
+  var ticking = false;
+  function update(){
+    var rect = hero.getBoundingClientRect();
+    var offset = Math.max(-14, Math.min(14, rect.top * -0.05));
+    frame.style.transform = 'translateY(' + offset.toFixed(1) + 'px)';
+    ticking = false;
+  }
+  document.addEventListener('scroll', function(){
+    if(!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, { passive:true });
+  update();
+})();
+
+(function(){
+  var nudge = document.getElementById('nudge');
+  var trigger = document.getElementById('nudge-trigger');
+  var closeBtn = document.getElementById('nudge-close');
+  if(!nudge || !trigger || !('IntersectionObserver' in window)) return;
+  var shown = false;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting && !shown){
+        shown = true;
+        nudge.classList.add('show');
+        io.unobserve(trigger);
+      }
+    });
+  }, { threshold: 0 });
+  io.observe(trigger);
+  if(closeBtn){
+    closeBtn.addEventListener('click', function(){
+      nudge.classList.remove('show');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

@@ -702,33 +702,33 @@
   }
 
   /* ---------- Testimonials ---------- */
-  .testi-featured{
-    max-width:680px;
+  .testi-row{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:var(--sp-8);
+    align-items:start;
+  }
+  .testi-card{
     background:var(--paper);
     border:1px solid var(--stone-300);
     border-radius:6px;
-    padding:var(--sp-12) var(--sp-8);
-    box-shadow:0 24px 50px -24px rgba(20,19,15,0.25);
+    padding:var(--sp-8) var(--sp-6);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .testi-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 20px 40px -20px rgba(20,19,15,0.2);
   }
   .testi-stars{
     display:flex;
     align-items:center;
-    gap:4px;
+    gap:3px;
     color:var(--rust);
   }
-  .testi-stars span{
-    margin-left:8px;
-    font-size:12px;
-    font-weight:600;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--stone-700);
-  }
-  .testi-quote-mark{ color:var(--stone-300); margin-top:var(--sp-4); }
-  .testi-quote-lg{
-    margin-top:var(--sp-3);
-    font-size:clamp(1.05rem, 2vw, 1.3rem);
-    line-height:1.5;
+  .testi-quote{
+    margin-top:var(--sp-4);
+    font-size:15px;
+    line-height:1.55;
     color:var(--ink);
   }
   .testi-attr{
@@ -932,7 +932,8 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 900px){
-    .steps{ grid-template-columns:1fr; }
+    .steps,
+    .testi-row{ grid-template-columns:1fr; }
     .contact-grid{ grid-template-columns:1fr; gap:var(--sp-12); }
     .hero-grid{ grid-template-columns:1fr; gap:var(--sp-12); }
     .hero-media{ order:-1; max-width:420px; margin:0 auto; }
@@ -1208,23 +1209,54 @@
         <h2 class="h2-section">What it's actually like to work with me</h2>
       </div>
 
-      <div class="testi-featured reveal">
-        <div class="testi-stars" aria-label="5 out of 5 stars">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
-          <span>Google Review</span>
+      <div class="testi-row">
+        <div class="testi-card reveal">
+          <div class="testi-stars" aria-label="5 out of 5 stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+          </div>
+          <p class="testi-quote">"We couldn't be happier with our experience! Landen was professional, knowledgeable, and responsive throughout the entire process. He priced and marketed our home perfectly — it sold in just 4 days! He kept us informed every step of the way and truly had our best interests in mind."</p>
+          <div class="testi-attr">
+            <strong>Heather</strong>
+            <span>Seller · Google Review</span>
+          </div>
         </div>
-        <svg width="34" height="26" viewBox="0 0 24 24" fill="currentColor" class="testi-quote-mark"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
-        <p class="testi-quote-lg">"Awesome real estate agent! Very thorough, attentive, and incredibly knowledgeable and helpful. Goes the extra mile for every single client. Would highly recommend working with him for any buyer or seller needs. This guy is 10/10."</p>
-        <div class="testi-attr">
-          <strong>Shannon</strong>
-          <span>Google Review</span>
+
+        <div class="testi-card reveal">
+          <div class="testi-stars" aria-label="5 out of 5 stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+          </div>
+          <p class="testi-quote">"Awesome real estate agent! Very thorough, attentive, and incredibly knowledgeable and helpful. Goes the extra mile for every single client. Would highly recommend working with him for any buyer or seller needs. This guy is 10/10."</p>
+          <div class="testi-attr">
+            <strong>Shannon</strong>
+            <span>Google Review</span>
+          </div>
         </div>
-        <a href="https://share.google/rnIjObUQBBaKSwOpu" target="_blank" rel="noopener noreferrer" class="btn btn-outline testi-google-btn">Read More Reviews On Google</a>
+
+        <div class="testi-card reveal">
+          <div class="testi-stars" aria-label="5 out of 5 stars">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.8-6.2 3.8 1.6-7L1.2 9.2l7.1-.6z"/></svg>
+          </div>
+          <p class="testi-quote">"Such a nice guy and great realtor! Love his drone videos."</p>
+          <div class="testi-attr">
+            <strong>Kaitlyn</strong>
+            <span>Google Review</span>
+          </div>
+        </div>
       </div>
+
+      <a href="https://share.google/rnIjObUQBBaKSwOpu" target="_blank" rel="noopener noreferrer" class="btn btn-outline testi-google-btn">Read More Reviews On Google</a>
     </div>
   </section>
 
